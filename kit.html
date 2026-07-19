@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>にじの ネイルアートセット</title>
+<style>
+  :root{
+    --ink:#4a3b56; --sub:#8d7ba0;
+    --pink:#ff8fab; --blue:#5ec8e5; --yellow:#ffd35c; --green:#7ed98a; --purple:#b79be5; --orange:#ffb65c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{
+    font-family:"Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(80% 50% at 10% 0%, #ffe3ec 0%, rgba(255,227,236,0) 55%),
+      radial-gradient(80% 50% at 95% 5%, #dff3ff 0%, rgba(223,243,255,0) 55%),
+      #fff7ec;
+    max-width:520px; margin:0 auto;
+    padding:calc(16px + env(safe-area-inset-top)) 20px calc(40px + env(safe-area-inset-bottom));
+  }
+  .back{
+    display:inline-block; font-size:12px; font-weight:800; color:var(--sub);
+    text-decoration:none; margin-bottom:10px;
+    background:#fff; border-radius:999px; padding:8px 16px;
+    box-shadow:0 3px 10px rgba(120,80,140,.12);
+  }
+  h1{
+    font-size:26px; font-weight:800; line-height:1.5; text-align:center;
+    margin:10px 0 4px;
+  }
+  h1 .rb{
+    background:linear-gradient(90deg,#ff8fab,#ffb65c,#ffd35c,#7ed98a,#5ec8e5,#b79be5);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .lead{
+    text-align:center; font-size:13px; color:var(--sub); line-height:2; margin-bottom:22px;
+  }
+  .box{
+    background:#fff; border-radius:24px; padding:20px 18px;
+    box-shadow:0 12px 34px rgba(120,80,140,.14);
+    border:3px dashed var(--yellow);
+    margin-bottom:20px;
+    position:relative; overflow:hidden;
+  }
+  .boxtitle{
+    font-size:15px; font-weight:800; letter-spacing:.14em; margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .items{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+  .item{
+    text-align:center; padding:12px 4px 10px;
+    background:#fffaf3; border-radius:18px;
+    animation:pop .5s ease backwards;
+  }
+  .item:nth-child(2){animation-delay:.06s}
+  .item:nth-child(3){animation-delay:.12s}
+  .item:nth-child(4){animation-delay:.18s}
+  .item:nth-child(5){animation-delay:.24s}
+  .item:nth-child(6){animation-delay:.30s}
+  @keyframes pop{from{opacity:0; transform:scale(.6)} to{opacity:1; transform:scale(1)}}
+  .emoji{font-size:34px; display:block; margin-bottom:6px}
+  .item b{font-size:11.5px; display:block; margin-bottom:3px}
+  .item small{font-size:9.5px; color:var(--sub); line-height:1.6; display:block}
+  /* 絵の具ボトル列 */
+  .bottles{display:flex; justify-content:center; gap:10px; margin:6px 0 2px}
+  .bottle{
+    width:34px; height:52px; border-radius:8px 8px 12px 12px; position:relative;
+    box-shadow:inset 0 -8px 10px rgba(0,0,0,.15), 0 3px 8px rgba(120,80,140,.2);
+    animation:wiggle 3s ease-in-out infinite;
+  }
+  .bottle::before{
+    content:""; position:absolute; top:-10px; left:50%; transform:translateX(-50%);
+    width:16px; height:12px; border-radius:4px 4px 0 0; background:#e8e0ee;
+  }
+  .bottle:nth-child(2){animation-delay:.3s}
+  .bottle:nth-child(3){animation-delay:.6s}
+  .bottle:nth-child(4){animation-delay:.9s}
+  .bottle:nth-child(5){animation-delay:1.2s}
+  .bottle:nth-child(6){animation-delay:1.5s}
+  @keyframes wiggle{0%,100%{transform:rotate(0)} 50%{transform:rotate(4deg)}}
+  .tips-row{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:4px}
+  .tip{
+    width:34px; height:44px; border-radius:16px 16px 13px 13px;
+    border:2.5px solid #fff;
+    box-shadow:0 3px 8px rgba(120,80,140,.18);
+  }
+  .steps{counter-reset:st}
+  .step{
+    display:flex; gap:14px; align-items:flex-start; margin-bottom:14px;
+  }
+  .step:last-child{margin-bottom:0}
+  .stnum{
+    counter-increment:st; flex:none;
+    width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:15px; color:#fff;
+  }
+  .stnum::before{content:counter(st)}
+  .step:nth-child(1) .stnum{background:var(--pink)}
+  .step:nth-child(2) .stnum{background:var(--orange)}
+  .step:nth-child(3) .stnum{background:var(--green)}
+  .step:nth-child(4) .stnum{background:var(--blue)}
+  .step p{font-size:12.5px; line-height:2; padding-top:4px}
+  .yakusoku{
+    background:#fff4f8; border-radius:18px; padding:14px 16px; margin-top:4px;
+    font-size:12px; line-height:2.1; color:#7a5468;
+  }
+  .yakusoku b{display:block; font-size:12.5px; margin-bottom:2px}
+  .note{
+    text-align:center; font-size:10.5px; color:var(--sub); line-height:1.9; margin-top:18px;
+  }
+  .gobtn{
+    display:block; text-align:center; text-decoration:none;
+    background:linear-gradient(135deg,#ff8fab,#ff7096); color:#fff;
+    font-size:15px; font-weight:800; letter-spacing:.18em; text-indent:.18em;
+    border-radius:999px; padding:17px 10px; margin-top:22px;
+    box-shadow:0 10px 24px rgba(255,112,150,.42);
+  }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← カメラに もどる</a>
+<h1><span class="rb">にじの ネイルアートセット</span></h1>
+<p class="lead">はこの なかみを そうぞうして かいてみたよ。<br><b>じぶんだけの セットも つくってごらん!</b></p>
+
+<div class="box">
+  <div class="boxtitle">🎁 はこの なかみ</div>
+  <div class="items">
+    <div class="item"><span class="emoji">🖌️</span><b>まほうの ふで</b><small>ほそいせん も ふといせん も かける</small></div>
+    <div class="item"><span class="emoji">🎨</span><b>にじの えのぐ</b><small>6しょく。まぜると あたらしい いろに</small></div>
+    <div class="item"><span class="emoji">💅</span><b>れんしゅうチップ</b><small>こどもサイズの ちいさな つめ 10まい</small></div>
+    <div class="item"><span class="emoji">✨</span><b>キラキラパウダー</b><small>ふりかけると ほしぞら みたいに</small></div>
+    <div class="item"><span class="emoji">🌈</span><b>シールブック</b><small>ハート・ほし・おはな いっぱい</small></div>
+    <div class="item"><span class="emoji">🧴</span><b>まもりの トップコート</b><small>さくひんを ずっと まもってくれる</small></div>
+  </div>
+</div>
+
+<div class="box">
+  <div class="boxtitle">🧪 にじの えのぐ 6しょく</div>
+  <div class="bottles">
+    <div class="bottle" style="background:linear-gradient(#ffb1c4,#ff8fab)"></div>
+    <div class="bottle" style="background:linear-gradient(#ffcd8a,#ffb65c)"></div>
+    <div class="bottle" style="background:linear-gradient(#ffe08a,#ffd35c)"></div>
+    <div class="bottle" style="background:linear-gradient(#a5e8b0,#7ed98a)"></div>
+    <div class="bottle" style="background:linear-gradient(#8fd9f0,#5ec8e5)"></div>
+    <div class="bottle" style="background:linear-gradient(#ccb6f0,#b79be5)"></div>
+  </div>
+  <div class="boxtitle" style="margin-top:16px">💅 れんしゅうチップ(こどもサイズ)</div>
+  <div class="tips-row">
+    <div class="tip" style="background:linear-gradient(#fff,#ffe4ee)"></div>
+    <div class="tip" style="background:linear-gradient(#ff8fab,#f5697f)"></div>
+    <div class="tip" style="background:repeating-linear-gradient(-45deg,#fff 0 5px,#ffd35c 5px 10px)"></div>
+    <div class="tip" style="background:radial-gradient(circle at 30% 30%,#fff 3px,transparent 3px),radial-gradient(circle at 70% 60%,#fff 3px,transparent 3px),linear-gradient(#5ec8e5,#3f9ec0)"></div>
+    <div class="tip" style="background:linear-gradient(180deg,#ff8fab 0 20%,#ffb65c 0 40%,#ffd35c 0 60%,#7ed98a 0 80%,#5ec8e5 0)"></div>
+  </div>
+</div>
+
+<div class="box">
+  <div class="boxtitle">✏️ あそびかた</div>
+  <div class="steps">
+    <div class="step"><div class="stnum"></div><p>かみに じぶんの セットの はこを かいてみよう。なにを いれる?</p></div>
+    <div class="step"><div class="stnum"></div><p>チップに すきな もようを かこう。ハート? ほし? きょうりゅう?</p></div>
+    <div class="step"><div class="stnum"></div><p>かいた えを カメラで うつして、アプリの「＋ しゃしん」から とりこもう。</p></div>
+    <div class="step"><div class="stnum"></div><p>てを かざすと、きみの えが ほんとうに つめに のるよ!</p></div>
+  </div>
+</div>
+
+<div class="box" style="border-color:var(--pink)">
+  <div class="boxtitle">🤝 おやくそく</div>
+  <div class="yakusoku">
+    <b>ほんものの マニキュアを つかうときは</b>
+    かならず おうちのひとと いっしょにね。
+    おへやの まどを あけて、おわったら てを あらおう。
+  </div>
+</div>
+
+<p class="note">この セットは そうぞうの おはなしだよ。<br>でも「じぶんで つくる」きもちは ほんものです。</p>
+
+<a class="gobtn" href="index.html">カメラで ためしてみる!</a>
+</body>
+</html>

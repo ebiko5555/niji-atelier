@@ -60,7 +60,8 @@
   .item:nth-child(5){animation-delay:.24s}
   .item:nth-child(6){animation-delay:.30s}
   @keyframes pop{from{opacity:0; transform:scale(.6)} to{opacity:1; transform:scale(1)}}
-  .emoji{font-size:34px; display:block; margin-bottom:6px}
+  .icon{display:block; width:40px; height:40px; margin:0 auto 6px}
+  .icon svg{width:100%; height:100%; display:block}
   .item b{font-size:11.5px; display:block; margin-bottom:3px}
   .item small{font-size:9.5px; color:var(--sub); line-height:1.6; display:block}
   /* 絵の具ボトル列 */
@@ -121,24 +122,24 @@
 </style>
 </head>
 <body>
-<a class="back" href="index.html">← カメラに もどる</a>
+<a class="back" href="index.html">カメラに もどる</a>
 <h1><span class="rb">にじの ネイルアートセット</span></h1>
 <p class="lead">はこの なかみを そうぞうして かいてみたよ。<br><b>じぶんだけの セットも つくってごらん!</b></p>
 
 <div class="box">
-  <div class="boxtitle">🎁 はこの なかみ</div>
+  <div class="boxtitle">はこの なかみ</div>
   <div class="items">
-    <div class="item"><span class="emoji">🖌️</span><b>まほうの ふで</b><small>ほそいせん も ふといせん も かける</small></div>
-    <div class="item"><span class="emoji">🎨</span><b>にじの えのぐ</b><small>6しょく。まぜると あたらしい いろに</small></div>
-    <div class="item"><span class="emoji">💅</span><b>れんしゅうチップ</b><small>こどもサイズの ちいさな つめ 10まい</small></div>
-    <div class="item"><span class="emoji">✨</span><b>キラキラパウダー</b><small>ふりかけると ほしぞら みたいに</small></div>
-    <div class="item"><span class="emoji">🌈</span><b>シールブック</b><small>ハート・ほし・おはな いっぱい</small></div>
-    <div class="item"><span class="emoji">🧴</span><b>まもりの トップコート</b><small>さくひんを ずっと まもってくれる</small></div>
+    <div class="item"><span class="icon"><svg viewBox="0 0 48 48"><rect x="21" y="4" width="6" height="24" rx="3" fill="#b79be5"/><path d="M19 28h10l-2 12c-.4 2.5-5.6 2.5-6 0z" fill="#ff8fab"/></svg></span><b>まほうの ふで</b><small>ほそいせん も ふといせん も かける</small></div>
+    <div class="item"><span class="icon"><svg viewBox="0 0 48 48"><path d="M24 6a18 16 0 1 0 0 32c4 0 3-4 6-5s10 1 10-9A18 16 0 0 0 24 6z" fill="#fff1dd" stroke="#4a3b56" stroke-width="2"/><circle cx="15" cy="20" r="3" fill="#ff8fab"/><circle cx="24" cy="14" r="3" fill="#ffd35c"/><circle cx="33" cy="20" r="3" fill="#5ec8e5"/><circle cx="16" cy="30" r="3" fill="#7ed98a"/></svg></span><b>にじの えのぐ</b><small>6しょく。まぜると あたらしい いろに</small></div>
+    <div class="item"><span class="icon"><svg viewBox="0 0 48 48"><path d="M16 14c0-6 16-6 16 0v14c0 10-16 10-16 0z" fill="#ffc9dd" stroke="#4a3b56" stroke-width="2"/><path d="M16 14c0-6 16-6 16 0v6H16z" fill="#ff8fab"/></svg></span><b>れんしゅうチップ</b><small>こどもサイズの ちいさな つめ 10まい</small></div>
+    <div class="item"><span class="icon"><svg viewBox="0 0 48 48"><path d="M24 6l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="#ffd35c"/><circle cx="38" cy="10" r="3" fill="#5ec8e5"/><circle cx="10" cy="38" r="3" fill="#ff8fab"/></svg></span><b>キラキラパウダー</b><small>ふりかけると ほしぞら みたいに</small></div>
+    <div class="item"><span class="icon"><svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="6" fill="#fff" stroke="#4a3b56" stroke-width="2"/><path d="M18 26l4-6 4 6z" fill="#ffd35c"/><circle cx="30" cy="20" r="4" fill="#ff8fab"/><path d="M15 34h18" stroke="#5ec8e5" stroke-width="3" stroke-linecap="round"/></svg></span><b>シールブック</b><small>ハート・ほし・おはな いっぱい</small></div>
+    <div class="item"><span class="icon"><svg viewBox="0 0 48 48"><rect x="18" y="4" width="12" height="8" rx="2" fill="#b79be5"/><rect x="14" y="14" width="20" height="28" rx="5" fill="#c9ecff" stroke="#4a3b56" stroke-width="2"/><rect x="14" y="26" width="20" height="16" rx="5" fill="#8fd9f0"/></svg></span><b>まもりの トップコート</b><small>さくひんを ずっと まもってくれる</small></div>
   </div>
 </div>
 
 <div class="box">
-  <div class="boxtitle">🧪 にじの えのぐ 6しょく</div>
+  <div class="boxtitle">にじの えのぐ 6しょく</div>
   <div class="bottles">
     <div class="bottle" style="background:linear-gradient(#ffb1c4,#ff8fab)"></div>
     <div class="bottle" style="background:linear-gradient(#ffcd8a,#ffb65c)"></div>
@@ -147,7 +148,7 @@
     <div class="bottle" style="background:linear-gradient(#8fd9f0,#5ec8e5)"></div>
     <div class="bottle" style="background:linear-gradient(#ccb6f0,#b79be5)"></div>
   </div>
-  <div class="boxtitle" style="margin-top:16px">💅 れんしゅうチップ(こどもサイズ)</div>
+  <div class="boxtitle" style="margin-top:16px">れんしゅうチップ(こどもサイズ)</div>
   <div class="tips-row">
     <div class="tip" style="background:linear-gradient(#fff,#ffe4ee)"></div>
     <div class="tip" style="background:linear-gradient(#ff8fab,#f5697f)"></div>
@@ -158,7 +159,7 @@
 </div>
 
 <div class="box">
-  <div class="boxtitle">✏️ あそびかた</div>
+  <div class="boxtitle">あそびかた</div>
   <div class="steps">
     <div class="step"><div class="stnum"></div><p>かみに じぶんの セットの はこを かいてみよう。なにを いれる?</p></div>
     <div class="step"><div class="stnum"></div><p>チップに すきな もようを かこう。ハート? ほし? きょうりゅう?</p></div>
@@ -168,7 +169,7 @@
 </div>
 
 <div class="box" style="border-color:var(--pink)">
-  <div class="boxtitle">🤝 おやくそく</div>
+  <div class="boxtitle">おやくそく</div>
   <div class="yakusoku">
     <b>ほんものの マニキュアを つかうときは</b>
     かならず おうちのひとと いっしょにね。

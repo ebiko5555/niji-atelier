@@ -429,11 +429,11 @@ function makeHands(opts){
 function ensureLive(){
   if(window.__mpFailed) return Promise.reject(new Error('cdn'));
   if(!liveReady){
-    liveHands = makeHands({maxNumHands:2, modelComplexity:1, minDetectionConfidence:0.6, minTrackingConfidence:0.6});
+    liveHands = makeHands({maxNumHands:2, modelComplexity:1, minDetectionConfidence:0.5, minTrackingConfidence:0.5});
     liveHands.onResults(res => {
       const lms = res.multiHandLandmarks || [];
       if(lms.length){ lastSeenT = performance.now(); updateLandmarks(lms); }
-      else if(performance.now() - lastSeenT > 280){ smoothed.length = 0; }
+      else if(performance.now() - lastSeenT > 600){ smoothed.length = 0; }
       liveBusy = false;
     });
     liveReady = liveHands.initialize();
@@ -454,10 +454,10 @@ function updateLandmarks(lms){
       const s = smoothed[h][i];
       [['x','vx'],['y','vy']].forEach(([ax,v])=>{
         const d = p[ax]-s[ax];
-        if(Math.abs(d) < 0.0022){ s[v]*=0.5; return; }
+        if(Math.abs(d) < 0.004){ s[v]*=0.5; return; }
         const dv = d/dt;
         s[v] += alphaFor(1.0, dt)*(dv - s[v]);
-        const cutoff = 1.0 + 25*Math.abs(s[v]);
+        const cutoff = 1.6 + 14*Math.abs(s[v]);
         s[ax] += alphaFor(cutoff, dt)*d;
       });
     });
@@ -591,14 +591,21 @@ function drawNails(){
     FINGERS.forEach(([tip,dip], fi)=>{
       const [tx,ty]=lmXY(lm[tip]), [dx,dy]=lmXY(lm[dip]);
       const rawLen = Math.hypot(tx-dx,ty-dy);
-      if(rawLen < 4) return;
+      const st = nailState[hi*5+fi];
+      if(rawLen < 4 && !st) return;
       const rawAng = Math.atan2(ty-dy,tx-dx);
-      const st = nailState[hi*5+fi] || (nailState[hi*5+fi] = {len:rawLen, ang:rawAng});
-      const dLen = rawLen - st.len;
-      if(Math.abs(dLen) > st.len*0.035) st.len += dLen*Math.min(1, 0.12 + Math.abs(dLen)/st.len);
-      let dAng = ((rawAng - st.ang + Math.PI*3) % (Math.PI*2)) - Math.PI;
-      if(Math.abs(dAng) > 0.035) st.ang += dAng*Math.min(1, 0.15 + Math.abs(dAng)*2);
-      const len = st.len, ang = st.ang;
+      if(rawLen >= 4){
+        if(!st){ nailState[hi*5+fi] = {len:rawLen, ang:rawAng}; }
+        else{
+          const dLen = rawLen - st.len;
+          if(Math.abs(dLen) > st.len*0.05) st.len += dLen*Math.min(1, 0.08 + Math.abs(dLen)/st.len*0.6);
+          let dAng = ((rawAng - st.ang + Math.PI*3) % (Math.PI*2)) - Math.PI;
+          if(Math.abs(dAng) > 0.05) st.ang += dAng*Math.min(1, 0.10 + Math.abs(dAng)*1.2);
+        }
+      }
+      const stFinal = nailState[hi*5+fi];
+      if(!stFinal) return;
+      const len = stFinal.len, ang = stFinal.ang;
       const w = len*0.54*scale, h = len*0.94*scale;
       ctx.save();
       ctx.translate(tx+Math.cos(ang)*len*0.10, ty+Math.sin(ang)*len*0.10);
